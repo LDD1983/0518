@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>0507_01</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            font-family: system-ui;
+            font-size: 20px;
+        }
+        /* body{
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            width: 80%;
+        } */
+        .con{
+            /* width: 80%; */
+            display: flex;
+            justify-content: center;
+           
+            margin: 0;
+            /* border: 1px solid #ccc; */
+            text-align: center;
+            align-items: center;
+        }
+        /* .c3{
+           height: 50px;
+        } */
+        /* .c2{
+            align-items: flex-start;
+        } */
+        .box{
+            width: 10vw;
+            height: 10vh;
+            border: 1px solid lightpink;
+            /* background-color: lightpink; */
+            color: lightpink;
+        }
+        box p{
+            margin:0 auto;
+        }
+        .con>.bst,
+        .con>.bsts{
+            width: 50vw;
+          
+        }
+        .con>.bsts{
+           border: none;
+           position: fixed;
+           /* border-radius: 10%; */
+           top: 40%;
+           background-color: lightpink;
+           width:100%;
+           height: 20%;
+           opacity: 0.9;
+        }
+
+
+        .con>.boxSe{
+            text-align: start;
+            width: 50vw;
+            height: 30px;
+            background-color: white;
+        }
+        .con>.b2_1{
+            width: 10vw;
+            height: 5vh;
+            /* text-align: start; */
+            /* padding-left: 40px; */
+            padding-top: 10px;
+            border: 1px solid lightpink;
+            text-align: center;
+         
+            /* background-color: #ccc; */
+        } .con>.b2_4{
+            width: 40vw;
+            height: 5vh;
+            /* text-align:end; */
+            /* padding-left: 40px; */
+            /* padding-right: 20px; */
+            padding-top: 5px;
+            border: 1px solid lightpink;
+         
+            /* background-color: #ccc; */
+        }
+        .con>.bt{
+            height: 30px;
+        }
+        .con>.b2>p{
+            margin: 0;
+            color: red;
+            font-size: 110px;
+            /* letter-spacing: 3px; */
+            
+           }
+       
+        .box>img{
+            /* margin-top: 5px; */
+            width: 95%;
+            margin:0 auto;
+        }
+        .box>input{
+            border: none;
+            margin-top: 20px;
+            width: 50px;
+            color: lightpink;   
+            
+        }
+        /* .box>select{
+            margin-top: 20px;
+} */
+        /* select>option{
+            border:1px solid lightpink;
+        } */
+        select{
+            border: none;
+            width: 10vw;
+            height: 28px;
+            color: lightpink;
+        }
+        .resT{
+            font-size: 20px;
+            margin: 0;
+            color: white;
+            display: block;
+        }
+        .sumB{
+            height: 70%;
+            width: 70%;
+            margin-top: 10px;
+            color: lightpink;
+            border: 1px solid pink;
+            background-color: white;
+        }
+        .cloB{
+            /* width: 100px;
+            height: 30px; */
+            align-self: flex-start;
+            font-size: 1px;
+            border:1px solid lightpink;
+            background-color: white;
+            color: lightpink;
+        }
+        .b2b{
+            width: 10px;
+            height: 10px;
+        }
+        /* .c2{
+            position: relative;
+        } */
+        .cloB{
+            position: absolute;
+            left: 5px;
+              top: 5px;
+                }
+        
+
+    </style>    
+
+</head>
+<body>
+    <!-- 內用/外帶 -->
+    <div class="con c1">      
+        <div class="box boxSe">
+              <select name="" id="seleC" onchange="seleF()" >
+                <option value="1">內用</option>
+                <option value="2">外帶</option>
+              </select>
+        </div>     
+    </div>
+    <!-- 品項列 -->
+    <div class="con c1">
+        <div class="box bt">
+                品項
+        </div>
+        <div class="box bt">
+                照片
+        </div>
+        <div class="box bt">
+                價格
+        </div>
+        <div class="box bt">
+                數量
+        </div>
+        <div class="box bt">
+            小計
+        </div>
+    </div>
+    <!-- 品項1 -->
+    <div class="con c1">
+        <div class="box">
+                <p>Caponata</p>
+        </div>
+        <div class="box">
+           <img src="./img/item1.png" alt="">
+        </div>
+        <div class="box" id="num1_1">
+                 100
+                <input style="border: none;" type="hidden" name="" id="num1_1_input" readonly value="100">
+        </div>
+        <div class="box">
+               <input type="text" name="num1_2" id="num1_2" value="0" onchange="inputCfun()">
+        </div>
+        <div class="box">
+            <p id="res1">0</p>
+        </div>
+    </div>
+    <!-- 品項2 -->
+    <div class="con c1">
+        <div class="box">
+                 <p>Caponata</p>
+        </div>
+        <div class="box">
+            <img src="./img/item1.png" alt="">
+        </div>
+        <div class="box" id="num2_1">
+                50
+            <input type="hidden" name="" id="num2_1_input" readonly value="50">
+        </div>
+        <div class="box">
+                <input type="text" name="num2_2" id="num2_2" value="0" onchange="inputCfun()">
+        </div>
+        <div class="box">
+           <p id="res2">0</p>
+        </div>
+    </div>
+    <!-- 品項3 -->
+    <div class="con c1">
+        <div class="box">
+                 <p>Caponata</p>
+        </div>
+        <div class="box">
+            <img src="./img/item1.png" alt="">
+        </div>
+        <div class="box" id="num3_1">
+                 60
+                <input  type="hidden" name="" id="num3_1_input" readonly value="60">
+        </div>
+        <div class="box">
+                <input type="text" name="num3_2" id="num3_2" value="0" onchange="inputCfun()">
+        </div>
+        <div class="box">
+           <p id="res3">0</p>
+        </div>
+    </div>
+    <!-- 跳出視窗 -->
+    <div class="con c2" id="result">
+        <div class="box bsts">
+            <p class="resT" id="resT">
+                resText  
+            </p>
+            <button type="button" onclick="cloF();" id="cloB" class="cloB">
+                x</button>          
+        </div>
+    </div>
+    <!-- 總計列 -->
+    <div class="con c2" >
+        <div class="box b2_1">總計</div>
+       <div class="box b2_4">
+        <span id="total">0</span>   
+       
+     </div>
+     
+        
+        
+    </div>
+    <div class="con c1" >
+        <div class="box bst">
+            <button type="button" onclick="funS1()" class="sumB">下單</button>
+        </div>
+     
+       
+          
+      
+
+    </div>
+
+
+
+ 
+
+    <script>
+        function inputCfun() {
+            // console.log(inputCfun);
+
+            let num1_2V = num1_2.value;
+            let num2_2V = num2_2.value;
+            let num3_2V = num3_2.value;
+
+
+            res1.innerText = Number(num1_1T)*num1_2V;
+            res2.innerText = Number(num2_1T)*num2_2V;
+            res3.innerText = Number(num3_1T)*num3_2V;
+
+            let res1S = Number(res1.innerText);
+            let res2S = Number(res2.innerText);
+            let res3S = Number(res3.innerText);
+            let sum = res1S+res2S+ res3S ;
+            
+
+            total.innerText = `${sum}`; 
+
+            
+        }
+
+        function funS1() {
+            let num1_2V = num1_2.value;
+            let num2_2V = num2_2.value;
+            let num3_2V = num3_2.value;
+
+
+            res1.innerText = Number(num1_1T)*num1_2V;
+            res2.innerText = Number(num2_1T)*num2_2V;
+            res3.innerText = Number(num3_1T)*num3_2V;
+
+            let res1S = Number(res1.innerText);
+           
+            let res2S = Number(res2.innerText);
+            // res2S.value = res2StotalValue;
+            let res3S = Number(res3.innerText);
+            // res3S.value = res3StotalValue;
+            // let sumValue = res1StotalValue + res2StotalValue + res3StotalValue;
+
+            let sum = res1S + res2S + res3S ;    
+                    // total.innerText = sumValue ;           
+            resT.innerText = `
+            ${num1_1T} x ${num1_2V} = ${res1S}
+            ${num2_1T} x ${num2_2V} = ${res2S}
+            ${num3_1T} x ${num3_2V} = ${res3S}
+            合計：${sum}`;
+
+          
+        let discount = 0;
+        if (sum >=300) {
+        discount = sum * 0.8;
+        resT.innerText =
+         ` ${num1_1T} x ${num1_2V} = ${res1S}
+            ${num2_1T} x ${num2_2V} = ${res2S}
+            ${num3_1T} x ${num3_2V} = ${res3S}
+            合計：${sum}
+         超過 300 打 8 折，特價為 ${discount} 
+        `;
+            
+        } else {
+            sum = sum;
+            
+        }
+        // ad.style.display = 'flex';
+        result.style.display = 'flex';
+            }
+
+    function cloF() {
+        num1_2.value = 0;
+        num2_2.value = 0;
+        num3_2.value = 0;
+        res1.innerText = 0;
+        res2.innerText = 0;
+        res3.innerText = 0;
+        total.innerText = 0;
+
+
+         result.style.display = 'none';
+            }
+    function seleF(){
+        // console.log(seleF);
+        let seleCv=seleC.value;
+        console.log(seleCv);
+        if (seleCv == 1) {
+            seleC.style.color = "white";
+            seleC.style.backgroundColor = "pink";
+
+        } else if(seleCv == 2){
+            seleC.style.color = "white";
+            seleC.style.backgroundColor = "pink";
+        }
+    }
+        
+
+
+        let num1_1 = document.getElementById('num1_1');
+        let num1_2 = document.getElementById('num1_2');
+        let num2_1 = document.getElementById('num2_1');
+        let num2_2 = document.getElementById('num2_2');
+        let num3_1 = document.getElementById('num3_1');
+        let res1 = document.getElementById('res1');
+        let res2 = document.getElementById('res2');
+        let res3 = document.getElementById('res3');
+        let total = document.getElementById('total');
+        let result = document.getElementById('result')
+        let seleC = document.getElementById('seleC')
+     
+        
+
+        console.log(total);
+        
+
+        let num1_1T = num1_1.innerText;
+        
+        
+        let num2_1T = num2_1.innerText;
+        
+        let num3_1T = num3_1.innerText;
+        // let resText = resT.innerText;
+        // let totalT = total.innerText;
+
+
+        // resText = 12345 ;
+        // console.log(resText);
+        // console.log(totalT);
+
+       
+        result.style.display = 'none';
+
+        
+      
+        // let res1_T = res1.innerText;
+
+        // console.log(num1_1T);
+    
+        // console.log(num2_1T);
+     
+        // console.log(num3_1T);
+    
+       
+        
+
+
+       
+
+       
+        // console.log(res1.innerText);
+        
+
+
+        // res1.innerText = number(num1_1T) * number(num1_2V);
+        // let res2T = res1.innerText;
+        // let res3T = res1.innerText;
+        // res1_T.addEventListener(num1_2V){
+        //     Number(num1_1T)*num1_2V
+
+        // }
+
+       
+
+
+        
+    </script>
+    
+</body>
+</html>

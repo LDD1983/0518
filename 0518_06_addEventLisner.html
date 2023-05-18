@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 300px;
+            height: 300px;
+            /* background-color: #ccc; */
+            border: 1px solid black;
+        }
+        .lightblue{
+            background-color: lightblue;
+        }
+        .lightpink{
+            background-color: lightpink;
+        }
+        .red{
+            background-color: lightpink;
+        }
+        .green{
+            background-color: lightgreen;
+        }
+        .grey{
+            background-color: #ccc;
+        }
+        .w-100{
+            width: 100px;
+        }
+    </style>
+</head>
+<body>
+    <button type="button" id="myBtn">Grey W-100</button>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="box" >
+
+    </div>
+    <script>
+        function myFun() {
+            // console.log('myfun ok'); 
+            box.setAttribute('class','box grey')           
+        }
+        function myFun2() {
+            // console.log('myfun2 ok');
+            box.setAttribute('class','box grey w-100')         
+        }
+        // const
+        const box = document.querySelector('.box');
+        const myBtn = document.getElementById('myBtn');
+
+        // addE
+        // stamp('mmonth','day')
+        myBtn.addEventListener('click',myFun);
+        myBtn.addEventListener('click',myFun2);
+        box.addEventListener('mouseover',function(){
+            box.setAttribute('class','box red')
+        });
+        box.addEventListener('mouseout',function(){
+            box.setAttribute('class','box green')
+        });
+        box.addEventListener('click',function(){
+            box.setAttribute('class','box')
+        });
+    </script>
+</body>
+</html>
